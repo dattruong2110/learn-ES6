@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+</head>
+<body>
+    <!-- <script>
+        // DOM
+        const h1DOM = document.createElement('h1');
+
+        h1DOM.title = 'Hello';
+        h1DOM.className = 'heading';
+        h1DOM.innerText = 'Hello guys!!!';
+
+        document.body.appendChild(h1DOM);
+
+        // React -> React-DOM
+        // React.createElement(type, props, children, n)
+        const h1React = React.createElement('h1', {
+            title: 'Hello',
+            className: 'heading',
+        }, 'Hello guys!!!');
+
+        console.dir(h1DOM);
+        console.log(h1React);
+    </script> -->
+
+    <!-- <script>
+        // DOM
+        const ulDOM = document.createElement('ul');
+        ulDOM.id = 'ul-id';
+        Object.assign(ulDOM.style, {
+            color: 'red',
+            fontSize: '50px'
+        });
+
+        const liDOM1 = document.createElement('li');
+        liDOM1.innerText = 'Javascript';
+        liDOM1.id = 'li-id';
+        liDOM1.className = 'li-class';
+
+        const liDOM2 = document.createElement('li');
+        liDOM2.innerText = 'ReactJS';
+        liDOM2.id = 'li-id';
+        liDOM2.className = 'li-class';
+        
+        ulDOM.appendChild(liDOM1);
+        ulDOM.appendChild(liDOM2);
+
+        document.body.appendChild(ulDOM);
+
+        // React
+        const ulReact = React.createElement(
+            'ul',
+            {
+                id: 'ul-id',
+                style: 'color: red; fontSize: 50px'
+            },
+            React.createElement('li', { id: 'li-id' }, 'Javascript'),
+            React.createElement('li', { id: 'li-id' }, 'React')
+        );
+
+        console.log(ulReact);
+    </script> -->
+
+    <script>
+        const divReact = React.createElement(
+            'div',
+            {
+                className: 'post-item'
+            },
+            React.createElement('h2', { title: 'Learn ReactJS' }, 'Learn ReactJS'),
+            React.createElement('p', null, 'Learn ReactJS from basic to advanced')
+        );
+        
+        console.log(divReact);
+    </script>
+</body>
+</html>

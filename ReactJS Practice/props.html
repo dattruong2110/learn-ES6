@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const root = document.getElementById('root');
+
+        const courses = [
+            {
+            "id": 8,
+            "placement": "home",
+            "type": "slideshow",
+            "banner": "banners/Banner_web_ReactJS.png",
+            "title": "Học ReactJS Miễn Phí!",
+            "description": "Khóa học ReactJS từ cơ bản tới nâng cao. Kết quả của khóa học này là bạn có thể làm hầu hết các dự án thường gặp với ReactJS.",
+            "alt": "Khoá học ReactJS online tại F8",
+            "cta_title": "Đăng ký ngay",
+            "link_to": "https://fullstack.edu.vn/courses/reactjs?ref=banner",
+            "data": {
+                "props": {
+                "style": {
+                    "--cta-hover-color": "#2877FA",
+                    "background": "linear-gradient(to right, #2877FA, #6717CD"
+                }
+                }
+            },
+            "is_blank": 1,
+            "priority": 0,
+            "expired": "2022-12-12 00:00:00",
+            "created_at": "2022-12-11T10:00:00.000000Z",
+            "updated_at": "2022-12-11T10:00:00.000000Z",
+            "banner_url": "https://files.fullstack.edu.vn/f8-prod/banners/Banner_web_ReactJS.png"
+            },
+            {
+            "id": 3,
+            "placement": "home",
+            "type": "slideshow",
+            "banner": "banners/Banner_01_2.png",
+            "title": "Thành Quả của Học Viên",
+            "description": "Để đạt được kết quả tốt trong mọi việc ta cần xác định mục tiêu rõ ràng cho việc đó. Học lập trình cũng không là ngoại lệ.",
+            "alt": "Thành quả của học viên",
+            "cta_title": "Xem thành quả",
+            "link_to": "https://fullstack.edu.vn/blog/tong-hop-cac-san-pham-cua-hoc-vien-tai-f8.html",
+            "data": {
+                "props": {
+                "style": {
+                    "--cta-hover-color": "#7612ff",
+                    "background": "linear-gradient(to right, #7612ff, #05b2ff)"
+                }
+                }
+            },
+            "is_blank": 1,
+            "priority": 10,
+            "expired": "2022-12-12 00:00:00",
+            "created_at": "2022-12-11T10:00:00.000000Z",
+            "updated_at": "2022-12-11T10:00:00.000000Z",
+            "banner_url": "https://files.fullstack.edu.vn/f8-prod/banners/Banner_01_2.png"
+            },
+            {
+            "id": 4,
+            "placement": "home",
+            "type": "slideshow",
+            "banner": "banners/Banner_03_youtube.png",
+            "title": "F8 trên Youtube",
+            "description": "F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội việc làm cho nghề IT và có những con người yêu thích lập trình F8 sẽ ở đó.",
+            "alt": "F8 trên Youtube",
+            "cta_title": "Truy cập kênh",
+            "link_to": "https://www.youtube.com/channel/UCNSCWwgW-rwmoE3Yc4WmJhw",
+            "data": {
+                "props": {
+                "style": {
+                    "--cta-hover-color": "#fe215e",
+                    "background": "linear-gradient(to right, #fe215e , #ff9402"
+                }
+                }
+            },
+            "is_blank": 1,
+            "priority": 11,
+            "expired": "2022-12-12 00:00:00",
+            "created_at": "2022-12-11T10:00:00.000000Z",
+            "updated_at": "2022-12-11T10:00:00.000000Z",
+            "banner_url": "https://files.fullstack.edu.vn/f8-prod/banners/Banner_03_youtube.png"
+            },
+            {
+            "id": 5,
+            "placement": "home",
+            "type": "slideshow",
+            "banner": "banners/Banner_04_2.png",
+            "title": "F8 trên Facebook",
+            "description": "F8 được nhắc tới ở mọi nơi, ở đâu có cơ hội việc làm cho nghề IT và có những con người yêu thích lập trình F8 sẽ ở đó.",
+            "alt": "F8 trên Facebook",
+            "cta_title": "Truy cập nhóm",
+            "link_to": "https://www.facebook.com/groups/649972919142215",
+            "data": {
+                "props": {
+                "style": {
+                    "--cta-hover-color": "#007efe",
+                    "background": "linear-gradient(to right, #007efe, #06c3fe"
+                }
+                }
+            },
+            "is_blank": 1,
+            "priority": 12,
+            "expired": "2022-12-12 00:00:00",
+            "created_at": "2022-12-11T10:00:00.000000Z",
+            "updated_at": "2022-12-11T10:00:00.000000Z",
+            "banner_url": "https://files.fullstack.edu.vn/f8-prod/banners/Banner_04_2.png"
+            }
+        ]
+
+        // CourseItem
+        // UI Component
+        const CourseItem = ({ course, onClick }) => (
+            <React.Fragment>
+                <h1 onClick={() => onClick(course)} className='heading'> {course.title} </h1>    
+                <img src={course.banner_url} alt={course.title} />
+                <p className='description'>{course.description}</p>
+            </React.Fragment>
+        )
+
+        // Container
+        function App() {
+
+            const handleClick = (course) => {
+                console.log(course.title);
+            }
+
+            return (
+                <div id='wrapper'>
+                    {courses.map(course => (
+                        <CourseItem 
+                            key={course.id}
+                            course={course}
+                            onClick={handleClick}
+                        />
+                    ))}    
+                </div>
+            )
+        }
+
+        // PostItem
+        // function PostItem({
+        //     image,
+        //     title,
+        //     description,
+        //     published,
+        //     callback = () => {},
+        // }) {
+
+        //     callback();
+
+        //     return (
+        //         <React.Fragment>
+        //             <label htmlFor="email">Email</label>
+        //             <input id="email" />
+        //             <br />
+        //             <img src={image} alt="{title}" />
+        //             <h2 className="post-title">{title}</h2>
+        //             <p className="post-desc">{description}</p>
+        //             <p className="post-published">{published}</p>
+        //         </React.Fragment>
+        //     );
+        // }
+
+        // function App() {
+        //     return (
+        //         <div className="posts-list">
+        //             <PostItem
+        //                 title="Xây Dựng Website với ReactJS"
+        //                 image="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png"
+        //                 description="Khóa học ReactJS từ cơ bản tới nâng cao, kết quả của khóa học này là
+        //                 bạn có thể làm hầu hết các dự án thường gặp với ReactJS. Cuối khóa học này bạn sẽ sở hữu một
+        //                 dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ
+        //                 trong khóa học này."
+        //                 published="1 day ago"
+        //                 callback={() => {}}
+
+        //             />
+        //             <PostItem
+        //                 title="Xây Dựng Website với ReactJS"
+        //                 image="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png"
+        //                 description="Khóa học ReactJS từ cơ bản tới nâng cao, kết quả của khóa học này là
+        //                 bạn có thể làm hầu hết các dự án thường gặp với ReactJS. Cuối khóa học này bạn sẽ sở hữu một
+        //                 dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ
+        //                 trong khóa học này."
+        //                 published="1 day ago"
+        //             />
+        //             <PostItem
+        //                 title="Xây Dựng Website với ReactJS"
+        //                 image="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png"
+        //                 description="Khóa học ReactJS từ cơ bản tới nâng cao, kết quả của khóa học này là
+        //                 bạn có thể làm hầu hết các dự án thường gặp với ReactJS. Cuối khóa học này bạn sẽ sở hữu một
+        //                 dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ
+        //                 trong khóa học này."
+        //                 published="1 day ago"
+        //             />
+        //         </div>
+        //     );
+        // };
+
+        ReactDOM.render(<App />, root);
+    </script>
+</body>
+
+</html>

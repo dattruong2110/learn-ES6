@@ -1,0 +1,26 @@
+*{ 
+    margin: 0;
+    padding: 0;
+}
+
+/* .box {
+    background: red; 
+    width: 100px; 
+    height: 100px;
+    display: inline-flex;
+} */
+
+body {
+    background-color: purple;
+    display: flex;
+    height: 100vh;
+}
+
+.mobile,
+.tablet,
+.pc {
+    margin: auto;
+    font-size: 100px;
+    color: #fff;
+    display: none;
+}

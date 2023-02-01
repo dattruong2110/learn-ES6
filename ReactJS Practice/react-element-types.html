@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <!-- <script type="text/babel">
+        const root = document.getElementById('root');
+
+        function Header() {
+            return (
+                <div className="header">Header</div>    
+            );
+        }
+
+        // function Content() {
+        //     return (
+        //         <div className="content">Content</div>  
+        //     );
+        // }
+
+        class Content extends React.Component {
+            render() {
+                return (
+                    <div className="content">Content</div> 
+                );
+            }
+        }
+
+        function Footer() {
+            return (
+                <div className="footer">Footer</div> 
+            );
+        }
+
+        const app = (
+            <div className="wrapper">
+                <Header />   
+                <Content />  
+                <Footer />   
+            </div>
+        );
+
+        ReactDOM.render(app, root);
+    </script> -->
+
+    <script type="text/babel">
+        const root = document.getElementById('root');
+
+        function PostItem() {
+            return (
+                <React.Fragment>
+                    <img src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png" alt="ReactJS Course" />
+                    <h2 className="post-title">Xây Dựng Website với ReactJS</h2>
+                    <p className="post-desc">Khóa học ReactJS từ cơ bản tới nâng cao, kết quả của khóa học này là 
+                        bạn có thể làm hầu hết các dự án thường gặp với ReactJS. Cuối khóa học này bạn sẽ sở hữu một 
+                        dự án giống Tiktok.com, bạn có thể tự tin đi xin việc khi nắm chắc các kiến thức được chia sẻ 
+                        trong khóa học này.</p>
+                    <p className="post-published">1 day ago</p>
+                </React.Fragment>
+            );
+        }
+
+        const app = (
+            <div className="posts-list">
+                <PostItem />    
+            </div>
+        );
+
+        ReactDOM.render(app, root);
+    </script>
+</body>
+</html>
