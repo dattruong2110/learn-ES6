@@ -9,23 +9,24 @@
       function myMap() {
         const lat = 0;
         const long = 0;
-        var map;
-        // var myCenter = new google.maps.LatLng(10.804572, 106.709811);
-        var myCenter = new google.maps.LatLng(10.802802474987345, 106.68830163220511);
+        // const myCenter = new google.maps.LatLng(10.804572, 106.709811);
+        const myCenter = new google.maps.LatLng(10.802802474987345, 106.68830163220511);
 
-        var mapProp = {
+        const mapProp = {
           center: myCenter,
-          zoom: 5,
+          zoom: 20,
         };
-        var map = new google.maps.Map(
+
+        const map = new google.maps.Map(
           document.getElementById("googleMap"),
           mapProp
         );
+
         const marker = new google.maps.Marker({ 
             position: myCenter,
-            zoom: 20
+            animation:google.maps.Animation.BOUNCE
         });
-
+        
         marker.setMap(map);
         map.setMapTypeId(google.maps.MapTypeId.HYBRID);
       }
